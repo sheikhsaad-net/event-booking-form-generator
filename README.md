@@ -4,24 +4,25 @@
   </a>
 </p>
 
-# Booking Application
+# Event Booking Form Generator
 
-This is a **Laravel-based booking management system**.  
-It allows users to register **minors** and **adults (maggiorenne)**, generate **PDF participation forms**, and handle age-based rules for activities.
+**Event Booking Form Generator** is a Laravel-based application for managing bookings,  
+validating participant age rules, and generating pre-filled PDF participation forms for both **adults** and **minors**.
 
 ---
 
 ## Features
 
-- User registration with validation and booking ID generation (`MA_####` or `MI_####`).
-- Different form templates for **minors** and **adults**.
-- Age rules:
-  - **Under 6**: Not allowed (`Il minore non è ammesso`).
-  - **6–10**: Auto-assigned to `"FUNE DEDICATA AI BAMBINI"`.
-  - **11+**: Normal registration.
-- PDF generation with **FPDI** based on booking data.
-- Bulk **download of PDFs** filtered by date and minor/adult.
-- Error handling with inline validation messages in Blade.
+- Auto-generate unique booking IDs:
+  - `MA_####` → Adults (Maggiorenne)
+  - `MI_####` → Minors (Minorenne)
+- Age validation rules:
+  - **Under 6** → Not allowed (`Il minore non è ammesso`)
+  - **6–10** → Auto-assigned `"FUNE DEDICATA AI BAMBINI"`
+  - **11+** → Standard booking
+- Separate **PDF templates** for minors and adults using **FPDI**.
+- Bulk PDF download by **date** and **type (adult/minor)**.
+- Inline **error handling** with Blade validation messages.
 
 ---
 
@@ -29,16 +30,16 @@ It allows users to register **minors** and **adults (maggiorenne)**, generate **
 
 - PHP >= 8.1  
 - Composer  
-- MySQL or PostgreSQL  
 - Laravel 10+  
-- Extensions: `mbstring`, `openssl`, `pdo`, `tokenizer`, `xml`, `gd`
+- Database: MySQL / PostgreSQL  
+- PHP extensions: `mbstring`, `openssl`, `pdo`, `tokenizer`, `xml`, `gd`
 
 ---
 
 ## Installation
 
-1. Clone the repository:
+1. Clone repository:
 
    ```bash
-   git clone https://github.com/your-username/booking-app.git
-   cd booking-app
+   git clone https://github.com/your-username/event-booking-form-generator.git
+   cd event-booking-form-generator
