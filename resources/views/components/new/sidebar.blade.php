@@ -34,10 +34,11 @@
               <svg width="20" height="20" viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   stroke-width="1.6"
                   stroke-linecap="round"
-                  stroke-linejoin="round">
+                  stroke-linejoin="round"
+                  class="{{ request()->is('trasporto') ? 'text-white' : 'text-dark' }}">
 
                   <rect x="1" y="7" width="15" height="10" rx="2"/>
                   <path d="M16 11h4l3 3v3h-7"/>
@@ -49,7 +50,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ request()->is('supporting-members') ? 'active' : '' }}" href="{{ route('members.index') }}">
+          <a class="nav-link {{ request()->is('trasporto') ? 'active' : '' }}" href="{{ route('members.index') }}">
             <div class="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
               <svg width="20" height="20" viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"

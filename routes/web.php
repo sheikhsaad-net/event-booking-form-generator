@@ -22,15 +22,9 @@ Route::get('/thanks', function () { return view('thanks');})->name('thanks');
 
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', ])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 
     Route::get('/trasporto', [BookingController::class, 'index'])->name('bookings.index');
     Route::get('/trasporto/{id}', [BookingController::class, 'show'])->name('bookings.show');
@@ -40,6 +34,16 @@ Route::middleware([
     Route::get('/trasporto/{id}/delete', [BookingController::class, 'destroy'])->name('bookings.delete');
     Route::get('/bookings/download-all', [BookingController::class, 'downloadAll'])->name('bookings.downloadAll');
     Route::get('/bookings/export-csv', [BookingController::class, 'exportCsv'])->name('bookings.export_csv');
+
+    
+    Route::get('/supporting-members', [SupportingMemberController::class, 'index'])->name('members.index');
+    Route::get('/supporting-members/{id}', [SupportingMemberController::class, 'show'])->name('members.show');
+    Route::put('/supporting-members/{id}/update', [SupportingMemberController::class, 'update'])->name('members.update');
+    Route::get('/supporting-members/{id}/delete', [SupportingMemberController::class, 'destroy'])->name('members.delete');
+
+    Route::get('/supporting-members/{id}/download', [BookingController::class, 'download'])->name('members.download');
+    Route::get('/supporting-members/export-csv', [SupportingMemberController::class, 'exportCsv'])->name('members.export_csv');
+
 
 });
 
