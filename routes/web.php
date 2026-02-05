@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\SupportingMemberController;
 
 Route::get('/register', function () {
     return view('welcome');
@@ -11,15 +12,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/booking', function () {
-        return view('user/general-bookings');
-    })->name('booking');
-
-Route::get('/thanks', function () {
-    return view('thanks');
-})->name('thanks');
-
+Route::get('/booking', function () { return view('user/general-bookings'); })->name('booking');
 Route::post('/bookings/store', [BookingController::class, 'store'])->name('bookings.store');
+
+Route::get('/members', function () { return view('user/supporting-members'); })->name('members');
+Route::post('/members/store', [SupportingMemberController::class, 'store'])->name('members.store');
+
+Route::get('/thanks', function () { return view('thanks');})->name('thanks');
+
+
 
 Route::middleware([
     'auth:sanctum',

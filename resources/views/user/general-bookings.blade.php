@@ -7,9 +7,9 @@
                         <div class="col-md-8 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-5 pb-5">
                                 <div class="card-header pb-0 text-left bg-transparent">
-                                    <h3 class="font-weight-black text-dark display-6 mb-2">Richiesta di Partecipazione al Trasporto del Carro 2025 – FUNAIOLO –</h3></br>
+                                    <h3 class="font-weight-black text-dark display-6 mb-2">Richiesta di Partecipazione al Trasporto del Carro {{ now()->year }} – FUNAIOLO –</h3></br>
                                     @if(request()->get('type') == 1)
-                                    <p class="mb-3"><b>La prenotazione come funaiolo di un MINORE alla Processione del Carro del 2025 “La Grande Tirata” deve essere fatta da uno dei due genitori o da un tutore legale.</b></br></br>
+                                    <p class="mb-3"><b>La prenotazione come funaiolo di un MINORE alla Processione del Carro del {{ now()->year }} “La Grande Tirata” deve essere fatta da uno dei due genitori o da un tutore legale.</b></br></br>
                                     Per i minori sono previste le seguenti restrizioni:</p>
                                     <ul style="margin-left: 12px; line-height: 26px;" class="mb-3">
                                         <li>a) Con meno di 6 anni di età il minore non è ammesso.</li>
@@ -18,7 +18,7 @@
                                         <li>d) Oltre i 14 anni di età il minore dovrà essere autorizzato.</li>  
                                     </ul>
                                     @else
-                                    <p class="mb-3"><b>Per la prenotazione come funaiolo alla Processione del Carro del 2025 “La Grande Tirata” ti chiediamo di riempire i seguenti campi, di indicare le opzioni, di leggere attentamente gli adempimenti e gli allegati, e di premere INVIO</b></p>
+                                    <p class="mb-3"><b>Per la prenotazione come funaiolo alla Processione del Carro del {{ now()->year }} “La Grande Tirata” ti chiediamo di riempire i seguenti campi, di indicare le opzioni, di leggere attentamente gli adempimenti e gli allegati, e di premere INVIO</b></p>
                                     @endif
                                 </div>
 
