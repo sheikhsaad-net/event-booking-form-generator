@@ -108,8 +108,8 @@
           },
           tooltip: {
             backgroundColor: '#fff',
-            titleColor: '#1e293b',
-            bodyColor: '#1e293b',
+            titleColor: '#222222',
+            bodyColor: '#222222',
             borderColor: '#e9ecef',
             borderWidth: 1,
             usePointStyle: true
@@ -242,8 +242,8 @@
           },
           tooltip: {
             backgroundColor: '#fff',
-            titleColor: '#1e293b',
-            bodyColor: '#1e293b',
+            titleColor: '#222222',
+            bodyColor: '#222222',
             borderColor: '#e9ecef',
             borderWidth: 1,
             pointRadius: 2,

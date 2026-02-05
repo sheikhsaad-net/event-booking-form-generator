@@ -460,7 +460,7 @@ class BookingController extends Controller
             fclose($file);
         };
 
-        $filename = 'prenotazioni_' . now()->format('Ymd_His') . '.csv';
+        $filename = 'trasporto_' . now()->format('Ymd_His') . '.csv';
 
         return response()->streamDownload($callback, $filename, [
             'Content-Type' => 'text/csv',

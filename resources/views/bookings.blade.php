@@ -7,7 +7,7 @@
             <div class="card-header border-bottom pb-0">
               <div class="d-sm-flex align-items-center">
                 <div>
-                  <h6 class="font-weight-semibold text-lg mb-0">Gestione Prenotazioni</h6>
+                  <h6 class="font-weight-semibold text-lg mb-0">Gestione Trasporto</h6>
                   <p class="text-sm"></br></p>
                 </div>
                 <div class="ms-auto d-flex">
@@ -32,7 +32,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
                               </svg>
                           </span>
-                          <input type="text" name="search" class="form-control" placeholder="Cerca per nome o codice" value="{{ request('search') }}">
+                          <input type="text" name="search" class="form-control border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md" placeholder="Cerca per nome o codice" value="{{ request('search') }}">
                       </div>
 
                       <!-- Alphabet Filter -->
@@ -57,7 +57,7 @@
                       </div>
 
                       <div class="me-3 w-sm-20">
-                          <input type="date" name="date" class="form-control" max="{{ date('Y-m-d') }}" value="{{ request('date') }}">
+                          <input type="date" name="date" class="form-control border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md" max="{{ date('Y-m-d') }}" value="{{ request('date') }}">
                       </div>
 
                       <!-- Submit -->
