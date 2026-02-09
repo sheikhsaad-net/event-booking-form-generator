@@ -32,19 +32,13 @@ class SupportingMember extends Model
         'email',
         'pec',
         'contribution',
-        'payment_method',
-        'iban',
         'payment_note',
-        'submission_date',
-        'signing_place',
-        'signing_date',
         'data_consent',
     ];
 
     protected $casts = [
         'birth_date' => 'date',
         'id_expiry' => 'date',
-        'submission_date' => 'date',
         'signing_date' => 'date',
         'data_consent' => 'boolean',
     ];

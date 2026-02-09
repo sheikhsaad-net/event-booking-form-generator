@@ -33,12 +33,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('pec')->nullable();
             $table->decimal('contribution', 10, 2)->nullable();
-            $table->string('payment_method')->nullable();
-            $table->string('iban', 34)->nullable();
             $table->string('payment_note')->nullable();
-            $table->date('submission_date')->nullable();
-            $table->string('signing_place')->nullable();
-            $table->date('signing_date')->nullable();
             $table->boolean('data_consent')->default(false);
             $table->timestamps();
         });

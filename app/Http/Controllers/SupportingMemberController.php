@@ -32,11 +32,7 @@ class SupportingMemberController extends Controller
             'email'           => 'required|email|max:255',
             'pec'             => 'nullable|email|max:255',
             'contribution'    => 'nullable|numeric',
-            'payment_method'  => 'nullable|string|max:255',
-            'iban'            => 'nullable|string|max:50',
             'payment_note'    => 'nullable|string|max:255',
-            'signing_place'   => 'nullable|string|max:255',
-            'signing_date'    => 'nullable|date',
             'data_consent'    => 'required|accepted',
         ]);
 
@@ -118,11 +114,7 @@ class SupportingMemberController extends Controller
             'email'           => 'required|email|max:255',
             'pec'             => 'nullable|email|max:255',
             'contribution'    => 'nullable|numeric',
-            'payment_method'  => 'nullable|string|max:255',
-            'iban'            => 'nullable|string|max:50',
             'payment_note'    => 'nullable|string|max:255',
-            'signing_place'   => 'nullable|string|max:255',
-            'signing_date'    => 'nullable|date',
             'data_consent'    => 'required|accepted',
         ]);
 
