@@ -45,7 +45,7 @@
                   <circle cx="18.5" cy="17.5" r="1.5"/>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Trasporto {{ now()->year }}</span>
+            <span class="nav-link-text ms-1">Trasporto 2025</span>
           </a>
         </li>
         <li class="nav-item">

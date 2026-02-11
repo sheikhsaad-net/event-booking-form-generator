@@ -30,7 +30,7 @@
                                         <div class="row mb-3">
                                             <div class="col">
                                                 <label>Tipo Adesione*</label>
-                                                <select name="membership_type" class="form-select" required>
+                                                <select id="membershipType" name="membership_type" class="form-select" required>
                                                     <option value="">-- Seleziona --</option>
                                                     <option value="persona_fisica" {{ old('membership_type') == 'persona_fisica' ? 'selected' : '' }}>Persona fisica</option>
                                                     <option value="persona_giuridica" {{ old('membership_type') == 'persona_giuridica' ? 'selected' : '' }}>Persona giuridica privata</option>
@@ -38,7 +38,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-3">
+                                        <!-- Fields to show only for persona_giuridica -->
+                                        <div id="companyFields" class="row mb-3" style="display: none;">
                                             <div class="col">
                                                 <label>Ragione Sociale</label>
                                                 <input type="text" name="company_name" class="border-gray-300 rounded-md w-full" value="{{ old('company_name') }}">
@@ -174,17 +175,19 @@
                                                         </p>
                                                         
                                                         <p class="mb-3">
-                                                            Consapevole che, all'atto di delibera positiva del Consiglio di Amministrazione e dell'Assemblea 
-                                                            dei Soci, saranno riservati i diritti ed i doveri statutari, il sottoscritto, dichiara di aver conferito alla 
-                                                            Fondazione a titolo di contributo per l'anno {{ now()->year }} la somma precedentemente indicata e si impegna 
-                                                            a fornire copia del versamento effettuato mediante invio a mezzo e-mail all'indirizzo di posta 
-                                                            soci@fondazioneilcarrodimirabella.it, ovvero a mano presso la sede della Fondazione.
+                                                            Consapevole che, all’atto di delibera positiva del Consiglio di Amministrazione e dell’Assemblea dei Soci, saranno riservati i diritti ed i doveri statutari, il sottoscritto, dichiara di procedere al conferimento alla Fondazione a titolo di contributo per l’anno 2026 della somma precedentemente indicata mediante bonifico su conto corrente bancario intestato a:
+                                                        </p>
+
+                                                        <p class="mb-3">
+                                                            FONDAZIONE IL CARRO DI MIRABELLA ETS<br>
+                                                            c/o BPER BANCA S.P.A. – Filiale di Mirabella Eclano (AV)<br>
+                                                            IBAN: IT32Y0538775770000004230966<br>
+                                                            BIC (codice SWIFT): BPMOIT22XXX<br><br>
+                                                            Causale: NOME e COGNOME – Contributo Socio Sostenitore anno 2026.
                                                         </p>
                                                         
                                                         <p class="mb-3">
-                                                            Dichiara inoltre che, in caso di mancanza di indirizzo E-MAIL con PEC, la Fondazione è 
-                                                            autorizzata all'invio delle convocazioni per l'Assemblea al semplice indirizzo E-MAIL comunicato 
-                                                            dal richiedente.
+                                                            Dichiara inoltre che, in caso di mancanza di indirizzo E-MAIL con PEC, la Fondazione è autorizzata all’invio delle convocazioni per l’Assemblea al semplice indirizzo E-MAIL comunicato dal richiedente. 
                                                         </p>
                                                         
                                                         <p class="mb-0">
@@ -237,4 +240,22 @@
             </div>
         </section>
     </main>
+    <script>
+        const membershipSelect = document.getElementById('membershipType');
+        const companyFields = document.getElementById('companyFields');
+
+        function toggleCompanyFields() {
+            if (membershipSelect.value === 'persona_giuridica') {
+                companyFields.style.display = 'flex';
+            } else {
+                companyFields.style.display = 'none';
+            }
+        }
+
+        // Run on change
+        membershipSelect.addEventListener('change', toggleCompanyFields);
+
+        // Run on page load to preserve old input
+        window.addEventListener('DOMContentLoaded', toggleCompanyFields);
+    </script>
 </x-guest-layout>

@@ -107,7 +107,6 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 <a href="{{ route('members.show', $member->id) }}" class="btn btn-sm btn-primary mt-3">Visualizza</a>
-                                                <a href="{{ route('members.download', $member->id) }}" class="btn btn-sm btn-success mt-3">Download</a>
                                             </td>
                                         </tr>
                                     @endforeach
