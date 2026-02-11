@@ -7,6 +7,12 @@ use App\Models\SupportingMember;
 
 class SupportingMemberController extends Controller
 {
+
+    public function create()
+    {
+        return view('user.supporting-members');
+    }
+
     public function store(Request $request)
     {
         // Validate incoming request

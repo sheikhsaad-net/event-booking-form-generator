@@ -11,6 +11,12 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function create()
+    {
+        return view('user.general-bookings');
+    }
+
     public function index(Request $request)
     {
         $query = Booking::query();
@@ -47,15 +53,6 @@ class BookingController extends Controller
         $bookings = $query->paginate(50)->appends($request->all());
 
         return view('bookings', compact('bookings'));
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**

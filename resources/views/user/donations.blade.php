@@ -7,8 +7,8 @@
                         <div class="col-md-8 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-5 pb-5">
                                 <div class="card-header pb-0 text-left bg-transparent">
-                                    <h3 class="font-weight-black text-dark display-6 mb-2">
-                                        DOMANDA DI AMMISSIONE COME SOCIO SOSTENITORE PER L'ANNO {{ now()->year }}
+                                    <h3 class="font-weight-black text-dark display-6 mb-3">
+                                        DONAZIONE LIBERALE – ANNO {{ now()->year }}
                                     </h3>
                                 </div>
 

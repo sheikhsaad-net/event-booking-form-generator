@@ -8,10 +8,10 @@ use App\Http\Controllers\DonationController;
 Route::view('/', 'welcome');
 Route::view('/register', 'welcome');
 
-Route::get('/booking', function () { return view('user/general-bookings'); })->name('booking');
+Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
 Route::post('/bookings/store', [BookingController::class, 'store'])->name('bookings.store');
 
-Route::get('/members', function () { return view('user/supporting-members'); })->name('members');
+Route::get('/members', [SupportingMemberController::class, 'create'])->name('donations.create');
 Route::post('/members/store', [SupportingMemberController::class, 'store'])->name('members.store');
 
 Route::get('/donazioni', [DonationController::class, 'create'])->name('donations.create');
