@@ -5,14 +5,14 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SupportingMemberController;
 use App\Http\Controllers\DonationController;
 
-Route::view('/', 'welcome');
-Route::view('/register', 'welcome');
+Route::get('/register', function () { return view('welcome'); }); 
+Route::get('/', function () { return view('welcome'); });
 
-Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
-Route::post('/bookings/store', [BookingController::class, 'store'])->name('bookings.store');
+Route::get('/prenotazione', [BookingController::class, 'create'])->name('booking.create');
+Route::post('/prenotazione/store', [BookingController::class, 'store'])->name('bookings.store');
 
-Route::get('/members', [SupportingMemberController::class, 'create'])->name('donations.create');
-Route::post('/members/store', [SupportingMemberController::class, 'store'])->name('members.store');
+Route::get('/membri', [SupportingMemberController::class, 'create'])->name('donations.create');
+Route::post('/membri/store', [SupportingMemberController::class, 'store'])->name('members.store');
 
 Route::get('/donazioni', [DonationController::class, 'create'])->name('donations.create');
 Route::post('/donazioni', [DonationController::class, 'store'])->name('donations.store');

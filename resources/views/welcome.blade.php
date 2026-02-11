@@ -12,10 +12,10 @@
 
                                     <!-- Buttons -->
                                     <div class="d-flex gap-3 p-2">
-                                        <a href="{{ route('booking') }}" class="btn btn-primary p-4" style="font-size: 18px; line-height: 30px;">
+                                        <a href="{{ route('booking.create') }}" class="btn btn-primary p-4" style="font-size: 18px; line-height: 30px;">
                                             MODULO DI PRENOTAZIONE PER I FUNAIOLI MAGGIORENNI
                                         </a>
-                                        <a href="{{ route('booking', ['type' => 1]) }}" class="btn btn-secondary p-4" style="font-size: 18px; line-height: 30px;">
+                                        <a href="{{ route('booking.create', ['type' => 1]) }}" class="btn btn-secondary p-4" style="font-size: 18px; line-height: 30px;">
                                             MODULO DI PRENOTAZIONE PER I FUNAIOLI MINORENNI
                                         </a>
                                     </div>
