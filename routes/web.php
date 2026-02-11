@@ -3,14 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SupportingMemberController;
+use App\Http\Controllers\DonationController;
 
-Route::get('/register', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+Route::view('/register', 'welcome');
 
 Route::get('/booking', function () { return view('user/general-bookings'); })->name('booking');
 Route::post('/bookings/store', [BookingController::class, 'store'])->name('bookings.store');
@@ -18,8 +14,10 @@ Route::post('/bookings/store', [BookingController::class, 'store'])->name('booki
 Route::get('/members', function () { return view('user/supporting-members'); })->name('members');
 Route::post('/members/store', [SupportingMemberController::class, 'store'])->name('members.store');
 
-Route::get('/thanks', function () { return view('thanks');})->name('thanks');
+Route::get('/donazioni', [DonationController::class, 'create'])->name('donations.create');
+Route::post('/donazioni', [DonationController::class, 'store'])->name('donations.store');
 
+Route::get('/thanks', function () { return view('thanks');})->name('thanks');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', ])->group(function () {
@@ -35,7 +33,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/bookings/download-all', [BookingController::class, 'downloadAll'])->name('bookings.downloadAll');
     Route::get('/bookings/export-csv', [BookingController::class, 'exportCsv'])->name('bookings.export_csv');
 
-    
     Route::get('/supporting-members', [SupportingMemberController::class, 'index'])->name('members.index');
     Route::get('/supporting-members/{id}', [SupportingMemberController::class, 'show'])->name('members.show');
     Route::put('/supporting-members/{id}/update', [SupportingMemberController::class, 'update'])->name('members.update');
@@ -43,7 +40,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('/supporting-members/{id}/download', [BookingController::class, 'download'])->name('members.download');
     Route::get('/supporting-members/export-csv', [SupportingMemberController::class, 'exportCsv'])->name('members.export_csv');
-
 
 });
 

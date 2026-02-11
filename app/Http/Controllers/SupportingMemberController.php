@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SupportingMember;
 use Illuminate\Http\Request;
-
+use App\Models\SupportingMember;
 
 class SupportingMemberController extends Controller
 {
@@ -120,8 +119,7 @@ class SupportingMemberController extends Controller
 
         $member->update($validated);
 
-        return redirect()->route('members.show', $id)
-                         ->with('success', 'Dati del Socio aggiornati correttamente.');
+        return redirect()->route('members.show', $id)->with('success', 'Dati del Socio aggiornati correttamente.');
     }
 
     // Delete member
