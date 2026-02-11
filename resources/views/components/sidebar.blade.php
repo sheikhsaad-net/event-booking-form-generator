@@ -67,6 +67,19 @@
             <span class="nav-link-text ms-1">Elenco soci {{ now()->year }}</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link {{ request()->is('donations') ? 'active' : '' }}" href="{{ route('donations.index') }}">
+              <div class="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="white">
+                      <!-- Donation / Hand holding coin icon -->
+                      <path d="M12 1C6.48 1 2 5.48 2 11s4.48 10 10 10 10-4.48 10-10S17.52 1 12 1zm1 14h-2v-2h2v2zm0-4h-2V7h2v4z"/>
+                  </svg>
+              </div>
+              <span class="nav-link-text ms-1">Donazioni Liberali {{ now()->year }}</span>
+          </a>
+        </li>
+
       </ul>
     </div>
   </aside>
