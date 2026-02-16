@@ -67,7 +67,6 @@
             <span class="nav-link-text ms-1">Elenco soci {{ now()->year }}</span>
           </a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link {{ request()->is('donations') ? 'active' : '' }}" href="{{ route('donations.index') }}">
               <div class="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
@@ -79,7 +78,6 @@
               <span class="nav-link-text ms-1">Donazioni Liberali {{ now()->year }}</span>
           </a>
         </li>
-
       </ul>
     </div>
   </aside>

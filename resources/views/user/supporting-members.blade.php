@@ -77,8 +77,13 @@
 
                                         <div class="row mb-3">
                                             <div class="col">
-                                                <label>Documento Tipo</label>
-                                                <input type="text" name="id_type" class="border-gray-300 rounded-md w-full" value="{{ old('id_type') }}">
+                                                <label>Tipo Documento</label>
+                                                <select name="id_type" class="form-select">
+                                                    <option value="">-- Seleziona --</option>
+                                                    <option value="C.I." {{ old('id_type') == 'C.I.' ? 'selected' : '' }}>C.I.</option>
+                                                    <option value="PATENTE" {{ old('id_type') == 'PATENTE' ? 'selected' : '' }}>PATENTE</option>
+                                                    <option value="PASSAPORTO" {{ old('id_type') == 'PASSAPORTO' ? 'selected' : '' }}>PASSAPORTO</option>
+                                                </select>
                                             </div>
                                             <div class="col">
                                                 <label>Numero Documento</label>
