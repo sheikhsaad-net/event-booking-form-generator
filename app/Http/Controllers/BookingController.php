@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Unsubscribe;
 use Illuminate\Http\Request;
 use setasign\Fpdi\Fpdi;
+use Illuminate\Support\Facades\Validator;
 
 class BookingController extends Controller
 {
@@ -680,6 +682,25 @@ class BookingController extends Controller
         return response($pdf->Output('S'))
             ->header('Content-Type', 'application/pdf')
             ->header('Content-Disposition', "attachment; filename=bookings-{$date}.pdf");
+    }
+
+    public function unsubscribeStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->with('error', 'Indirizzo email non valido.');
+        }
+
+        Unsubscribe::updateOrCreate(
+            ['email' => $request->email],
+            ['created_at' => now()] 
+        );
+
+        // Torna alla stessa pagina con un messaggio di successo
+        return back()->with('success', 'La tua richiesta è stata elaborata. Non riceverai più comunicazioni da parte nostra.');
     }
 
 }

@@ -12,6 +12,9 @@ Route::view('/register', 'welcome');
 Route::get('/prenotazione', [BookingController::class, 'create'])->name('booking.create');
 Route::post('/prenotazione/store', [BookingController::class, 'store'])->name('bookings.store');
 
+Route::view('/unsubscribe', 'unsubscribe')->name('unsubscribe');
+Route::post('/unsubscribe', [BookingController::class, 'unsubscribeStore'])->name('unsubscribe.store');
+
 //Supporting Member Controller
 Route::get('/membri', [SupportingMemberController::class, 'create'])->name('donations.create');
 Route::post('/membri/store', [SupportingMemberController::class, 'store'])->name('members.store');
@@ -20,8 +23,8 @@ Route::post('/membri/store', [SupportingMemberController::class, 'store'])->name
 Route::get('/donazioni', [DonationController::class, 'create'])->name('donations.create');
 Route::post('/donazioni', [DonationController::class, 'store'])->name('donations.store');
 
-//Thanks
-Route::get('/thanks', function () { return view('thanks');})->name('thanks');
+// Static Pages
+Route::view('/thanks', 'thanks')->name('thanks');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', ])->group(function () {
